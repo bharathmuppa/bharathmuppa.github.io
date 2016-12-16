@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Personel Github Site">
+    <meta name="keywords" content="Bharath,github">
+    <meta name="author" content="Devel-Batty">
+    <!-- CSS -->
+    <!-- load bootstrap (bootswatch version) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="font/pacifico.woff2" />
+    <link rel="stylesheet" type="text/css" href="">
+    <!-- JS -->
+    <!-- load angular, ngRoute, ngAnimate -->
+    <script src="lib/jQuery.js"></script>
+    <!--   <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script> -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="app.js"></script>
+</head>
+<!-- apply our angular app -->
 
-		<!-- CSS -->
-		<!-- load bootstrap (bootswatch version) -->
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
-		<link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
-		<!-- JS -->
-		<!-- load angular, ngRoute, ngAnimate -->
-		<script src="https://code.angularjs.org/1.2.13/angular.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
-		<script src="app.js"></script>
-
-	</head>
-
-	<!-- apply our angular app -->
-
-	<body ng-app="animateApp" ng-controller="mainController as mc">
+<body ng-app="battyApp" ng-controller="mainController as mc">
+    <!-- inject our views using ng-view -->
+    <!-- each angular controller applies a different class here -->
+    <nav class="header" >
         
-		<!-- inject our views using ng-view -->
-		<!-- each angular controller applies a different class here -->
-		<nav >
-			<h1 id="title">Bharath Muppa</h1>
-			<a href="#" class="btn btn-primary btn-lg bat" ng-if="mc.linkFlag">Home</a>
-			<a href="#about" class="btn btn-primary btn-lg bat" ng-if="mc.linkFlag">Portfolio</a>
-			<a href="#contact" class="btn btn-danger btn-lg bat" ng-if="mc.linkFlag">Contact</a>
-			<div class="logoContainer">
-			<img src="img/lock.ico" ng-click="mc.unlock(this)" onmouseover="increaseSize(this)" onmouseout="decreaseSize(this)" id="logo"></img></div>
-			
-		</nav>
-		<div class="page {{ pageClass }}" ng-view></div>
-
-	</body>
+        <div class="menuItems" ng-click="mc.changeTab(this)">
+            <a data-link="me" class="">Me</a>
+            <a data-link="works" class="">My Works</a>
+            <a data-link="course" class="">Musings</a>
+        </div>
+       
+    </nav>
+    <div class="page" ng-view></div>
+    <div id="menuIconId" class="menuIcon" ng-click="mc.toggleMenu(this)">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!--  <div class="logo"></div> -->
+</body>
 
 </html>

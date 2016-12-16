@@ -1,76 +1,84 @@
 // app.js
 
-// define our application and pull in ngRoute and ngAnimate
 
-function increaseSize(x) {
-	x.style.height = "95px";
-	x.style.width = "85px";
-};
-function decreaseSize(x) {
-	x.style.height = "85px";
-	x.style.width = "85px";
+angular.module('battyApp', ['ngRoute']).config(configFn);
+
+configFn.$injcetor = ['$routeProvider'];
+
+function configFn($routeProvider) {
+
+    $routeProvider.when('/', {
+            templateUrl: 'Home.html',
+            controller: 'homeController'
+        }).when('/me', {
+            templateUrl: 'Me.html',
+            controller: 'meController'
+        })
+        .when('/works', {
+            templateUrl: 'Work.html',
+            controller: 'workController'
+        })
+        .when('/course', {
+            templateUrl: 'Musings.html',
+            controller: 'musingsController'
+        });
+
 }
-
-for ( i = 0; i < document.getElementsByClassName("bat").length; i++) {
-	document.getElementsByClassName("bat")[i].style.display = "none";
-}
-
-var animateApp = angular.module('animateApp', ['ngRoute', 'ngAnimate']);
-
-// ROUTING ===============================================
-// set our routing for this application
-// each route will pull in a different controller
-animateApp.config(function($routeProvider) {
-
-	$routeProvider
-
-	// home page
-	.when('/', {
-		templateUrl : 'page-home.html',
-		controller : 'homeController'
-	})
-
-	// about page
-	.when('/about', {
-		templateUrl : 'page-about.html',
-		controller : 'aboutController'
-	})
-
-	// contact page
-	.when('/contact', {
-		templateUrl : 'page-contact.html',
-		controller : 'contactController'
-	});
-
-});
 
 // CONTROLLERS ============================================
-// home page controller
-animateApp.controller('homeController', function($scope) {
-	$scope.pageClass = 'page-home';
+
+angular.module('battyApp').controller('mainController', function($scope, $location) {
+    var mcc = this;
+    mcc.linkFlag = false;
+   
+    angular.element("body").removeClass("yMenu").addClass("nMenu");
+    mcc.changeTab = function(oEvent) {
+       
+        $location.path('/' + tab);
+        $(event.currentTarget).find('a').removeClass('active');
+        $(event.target).addClass("active");
+
+    };
+    mcc.toggleMenu = function(oEvent) {
+        if (!angular.element("#menuIconId").hasClass("close")) {
+
+            angular.element("#menuIconId").addClass("close");
+           // angular.element(".headerTitle").hide(1400);
+            angular.element(".menuItems").show(1500);
+        } else {
+            angular.element("#menuIconId").removeClass("close");
+            angular.element(".menuItems").hide(1400);
+            //angular.element(".headerTitle").show(1500);
+        }
+    };
+    mcc.unlock = function(x) {
+        if (event.target.getAttribute("src") === "img/lock.ico") {
+            event.target.src = "img/unlock.ico";
+            mcc.linkFlag = true;
+        } else {
+            event.target.src = "img/lock.ico";
+            mcc.linkFlag = false;
+
+        }
+    };
 
 });
-animateApp.controller('mainController', function($scope) {
-	var mcc = this;
-	mcc.linkFlag = false;
-	mcc.unlock = function(x) {
-		if (event.target.getAttribute("src") === "img/lock.ico") {
-			event.target.src = "img/unlock.ico";
- 			mcc.linkFlag = true;
-		} else {
-			event.target.src = "img/lock.ico";
-			mcc.linkFlag = false;
+// home page controller
+angular.module('battyApp').controller('meController', function($scope) {
 
-		}
-	};
+ angular.element("body").removeClass("nMenu").addClass("yMenu");
+});
+// home page controller
+angular.module('battyApp').controller('homeController', function($scope) {
+ angular.element("body").removeClass("yMenu").addClass("nMenu");
 
 });
 // about page controller
-animateApp.controller('aboutController', function($scope) {
-	$scope.pageClass = 'page-about';
+angular.module('battyApp').controller('workController', function($scope) {
+angular.element("body").removeClass("nMenu").addClass("yMenu");
 });
 
 // contact page controller
-animateApp.controller('contactController', function($scope) {
-	$scope.pageClass = 'page-contact';
+angular.module('battyApp').controller('musingsController', function($scope) {
+angular.element("body").removeClass("nMenu").addClass("yMenu");
 });
