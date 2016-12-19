@@ -1,0 +1,47 @@
+{
+    "education": {
+        "engineering": {
+            "percentage": "8.25",
+            "college": "SRKR Engineering College",
+            "description": "",
+            "specilization": "cse",
+            "degree": "Bachelor of Technology"
+        }
+
+    },
+    "experience": [{
+        "company": "Tata Communication Services",
+        "start": "23/12/2013",
+        "end": "",
+        "present": true
+    }],
+    "skills": [{
+        "name": "JS",
+        "points": 8
+    }, {
+        "name": "HTML5",
+        "points": 7
+    }, {
+        "name": "CSS",
+        "points": 6
+    }, {
+        "name": "Angular 1.x",
+        "points": 7
+    }, {
+        "name": "SAPUI5",
+        "points": 7
+    }, {
+        "name": "react",
+        "points": 5
+    }, {
+        "name": "node",
+        "points": 6
+    }, {
+        "name": "j2SE",
+        "points": 6
+    }, {
+        "name": "j2EE",
+        "points": 4
+    }],
+    "GettingStarted": ["Vuforia+unity", "Ardruino", "Angular 2"]
+}

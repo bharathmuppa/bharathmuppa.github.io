@@ -68,6 +68,38 @@ body.nMenu .page {
     height: 2px;
     background: #09c;
     display: inline-block;
+    box-shadow: 0px 1px 1px blue;
+    float: left;
+}
+
+.crossIconId {
+    display: none;
+    position: absolute;
+    width: 25px;
+    z-index: 22;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.crossIconId span.pos {
+    width: 23px;
+    margin: 5px 1px 0 1px;
+    height: 3px;
+    background: white;
+    display: inline-block;
+    box-shadow: 0px 1px 1px blue;
+    float: left;
+    transform: rotate(45deg);
+}
+
+.crossIconId span.neg {
+    width: 28px;
+    margin: 0 1px 0 1px;
+    height: 2px;
+    background: #09c;
+    display: inline-block;
+    box-shadow: 0px 1px 1px blue;
+    transform: rotate(-45deg);
     float: left;
 }
 
@@ -94,11 +126,14 @@ body.nMenu .page {
 
 .headerTitleHome h2 {
     margin: 0;
+    font-size: 5rem;
+    font-weight: normal;
 }
 
 .headerTitleHome p {
     font-size: 20px;
-    color: black;
+    color: cyan;
+    margin: 0 5% 0 5%;
 }
 
 .b1 {
@@ -113,7 +148,7 @@ body.nMenu .page {
 
 .menuItems {
     display: none;
-    width: 80%;
+    width: 100%;
     text-align: center;
 }
 
@@ -126,13 +161,32 @@ body.nMenu .page {
     color: white;
 }
 
-.menuItems a:hover {
+.nMenu .menuItems a {
+    color: white;
+}
+
+.yMenu .menuItems a {
+    color: indianred;
+}
+
+.nMenu .menuItems a:hover {
     color: indianred;
     cursor: pointer;
 }
 
-.menuItems .active {
+.yMenu .menuItems a:hover {
+    color: burlywood;
+    cursor: pointer;
+}
+
+.nMenu .menuItems .active {
     color: indianred;
+    cursor: text;
+}
+
+.yMenu .menuItems .active {
+    color: burlywood;
+    cursor: text;
 }
 
 .footer {
@@ -179,10 +233,96 @@ body.nMenu .page {
 /* PAGES (specific colors for each page)
  ============================================================================= */
 
-.page-home {
+.mebgImage {
     height: 100%;
     width: 100%;
-    color: white;
+    background: url("../img/butterfly.jpg");
+    background-repeat: no-repeat;
+    background-size: 20%;
+}
+
+.mePage {
+    height: 100%;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.Experience {
+    width: 85%;
+    height: auto;
+    margin: 5px 0 0 14%;
+    float: left;
+}
+
+.circle {
+    width: 100px;
+    height: 100Px;
+    background: aliceblue;
+    border: 10px solid #06c;
+    border-radius: 50%;
+    float: left;
+    text-align: center;
+    line-height: 95px;
+    font-size: large;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.circle.orangebdr,
+.box.orangebdr {
+    border-color: orange;
+    box-shadow: 1px 1px 14px orangered;
+}
+
+.circle.bluebdr,
+.box.bluebdr {
+    box-shadow: 1px 1px 14px royalblue;
+    border-color: darkcyan;
+}
+
+.circle.firstbdr,
+.box.firstbdr {
+    box-shadow: 1px 1px 14px #06c;
+    border-color: blue;
+}
+
+.dotted.orangebdr {
+    border-color: orange;
+}
+
+.dotted.bluehdr {
+    border-color: darkcyan;
+}
+
+.dotted.firstbdr {
+    border-color: blue;
+}
+
+.box {
+    float: left;
+    width: 65%;
+    border: 1px solid #09c;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 1px 1px 1px blue;
+}
+
+.box span {
+    display: inline-block;
+    width: 100%;
+    font-family: monospace;
+    margin: 5px 0 0 20px;
+}
+
+.box span b {
+    font-size: large;
+}
+
+.dotted {
+    border: 1px dotted #09c;
+    width: 11%;
+    float: left;
+    margin-top: 57px;
 }
 
 .video {
@@ -307,6 +447,12 @@ body.nMenu .page {
 }
 
 @media only screen and (max-width: 768px) {
+    body.yMenu nav {
+        position: fixed;
+        width: 100%;
+        height: 9%;
+        box-shadow: inset 0 0 6px grey;
+    }
     .menuItems {
         display: none;
         width: 100%;
@@ -317,16 +463,43 @@ body.nMenu .page {
         padding: 15px;
         width: 50px;
         font-family: pacifico;
-        font-size: 20px;
+        font-size: 22px;
         color: white;
     }
     .menuItems a:hover {
         color: indianred;
     }
+    .b2 {
+        font-size: 18px;
+    }
     .logo {
         top: 9px;
         width: 75px;
         height: 75px;
+    }
+    .headerTitleHome {
+        top: 15%;
+    }
+    .dotted {
+        width: 20px;
+    }
+    .circle {
+        width: 50px;
+        height: 50px;
+        line-height: 140px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .dotted {
+        display: none;
+    }
+    .circle {
+        display: none;
+    }
+    .box{
+        width:95%;
+        margin:0 auto;
     }
 }
 
