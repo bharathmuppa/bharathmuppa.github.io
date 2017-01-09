@@ -22,14 +22,14 @@ body {
 body.yMenu nav {
     position: fixed;
     width: 100%;
-    height: 15%;
-    background: firebrick;
+    height: 10%;
+    background: white;
     box-shadow: inset 0 0 6px grey;
 }
 
 body.yMenu .page {
     position: absolute;
-    top: 15%;
+    top: 10%;
     height: 85%;
     width: 100%;
     overflow: auto;
@@ -245,7 +245,7 @@ body.nMenu .page {
 .mePage {
     height: 100%;
     width: 80%;
-    margin: 50px auto;
+    margin: 0 0 0 auto;
 }
 
 .Experience {
@@ -310,7 +310,7 @@ body.nMenu .page {
 
 .box span {
     display: inline-block;
-    width: 95%;
+    width: 100%;
     font-family: monospace;
     margin: 5px 0 0 20px;
 }
@@ -378,6 +378,10 @@ body.nMenu .page {
     to {
         transform: translateX(-100%);
     }
+}
+
+.ng-enter {
+    animation: 0.5s slideInRight ease;
 }
 
 
@@ -498,9 +502,9 @@ body.nMenu .page {
     .circle {
         display: none;
     }
-    .box{
-        width:95%;
-        margin:0 auto;
+    .box {
+        width: 95%;
+        margin: 0 auto;
     }
 }
 

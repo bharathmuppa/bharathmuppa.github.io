@@ -33,10 +33,11 @@ angular.module('battyApp').controller('mainController', function($scope, $locati
 
     angular.element("body").removeClass("yMenu").addClass("nMenu");
     mcc.changeTab = function(oEvent) {
-
-        $location.path('/' + event.target.getAttribute("data-link"));
-        $(event.currentTarget).find('a').removeClass('active');
-        $(event.target).addClass("active");
+        if (event.target.getAttribute("data-link")) {
+            $location.path('/' + event.target.getAttribute("data-link"));
+            $(event.currentTarget).find('a').removeClass('active');
+            $(event.target).addClass("active");
+        }
 
     };
     mcc.toggleMenu = function(oEvent) {

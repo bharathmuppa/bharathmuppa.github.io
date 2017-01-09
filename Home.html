@@ -1,5 +1,5 @@
 <!-- page-home.html -->
-<video width="100%" class="video" height="100%" autoplay="autoplay" loop>
+<video width="100%" class="video" height="100%" autoplay="autoplay" loop autobuffer>
     <source src="./font/maaemo-film-2.mp4" type="video/mp4" />
 </video>
 <div class="headerTitleHome">
@@ -8,3 +8,9 @@
         <span class="b2">JAVASCRIPT,ANGULAR,JQUERY,SAPUI5,HTML,CSS</span> and love the presence of <span class="b2">Node, java </span> as REST (because they are best) buying data from <span class="b2">MYSQL/MongoDB 
 </span></p>
 </div>
+<script>
+var video = document.getElementById('video');
+video.addEventListener('click', function() {
+    video.play();
+}, false);
+</script>
