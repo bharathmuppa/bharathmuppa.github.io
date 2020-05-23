@@ -34,7 +34,7 @@ export default merge(baseConfig, {
     copy({
       targets: [
         { src: 'styles.css', dest: 'dist' },
-        { src: ['src/assets/**/*', 'assets/fonts/arial.woff2'], dest: 'dist/src/assets' },
+        { src: ['src/assets/**/*'], dest: 'dist/src/assets' },
       ]
     })
   ]
