@@ -35,7 +35,8 @@ export default merge(baseConfig, {
       targets: [
         { src: 'styles.css', dest: 'dist' },
         { src: ['src/assets/**/*'], dest: 'dist/src/assets' },
-      ]
+      ],
+      flatten: false
     })
   ]
 });
