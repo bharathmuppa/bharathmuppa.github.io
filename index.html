@@ -1,52 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Entangled cognition is an online Platform for Developers to build their Ideas and bring them into life, We gather Developers and Ideas to Democratize open source business"
+    />
+    
+    <link  rel="stylesheet" href="styles.css">
+    <!-- <base href="/" /> -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+    </style>
+    <title>ec-home</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Personel Github Site">
-    <meta name="keywords" content="Bharath,github">
-    <meta name="author" content="Devel-Batty">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS -->
-    <!-- load bootstrap (bootswatch version) -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="font/pacifico.woff2" />
-    <link rel="stylesheet" type="text/css" href="">
-    <!-- JS -->
-    <!-- load angular, ngRoute, ngAnimate -->
-    <script src="lib/jQuery.js"></script>
-    <!--   <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script> -->
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/angular-route.js"></script>
-    <!-- <script src="lib/angular-animate.min.js"></script> -->
-    <script src="app.js"></script>
-</head>
-<!-- apply our angular app -->
+  <body>
+    <ec-header></ec-header>
+    <ec-body></ec-body>
+    <ec-footer></ec-footer>
 
-<body ng-app="battyApp" ng-controller="mainController as mc">
-    <!-- inject our views using ng-view -->
-    <!-- each angular controller applies a different class here -->
-    <nav class="header" >
-        
-        <div class="menuItems" ng-click="mc.changeTab(this)">
-            <a data-link="me" class="">Me</a>
-            <a data-link="works" class="">My Works</a>
-            <a data-link="course" class="">Musings</a>
-        </div>
-       
-    </nav>
-    <div class="page" ng-view></div>
-    <div id="menuIconId" class="menuIcon" ng-click="mc.toggleMenu(this)">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-     <div id="crossIconId" class="crossIconId" ng-click="mc.toggleMenu(this)">
-        <span class="pos"> </span>
-        <span class="neg"></span>
-        
-    </div>
-    <!--  <div class="logo"></div> -->
-</body>
-
+    <script type="module" src="./src/views/header/header.js"></script>
+    <script type="module" src="./src/views/body/body.js"></script>
+    <script type="module" src="./src/views/footer/footer.js"></script>
+  </body>
 </html>
