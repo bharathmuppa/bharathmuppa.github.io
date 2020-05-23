@@ -1,5 +1,5 @@
+/* eslint-disable class-methods-use-this */
 import { LitElement, html, css } from 'lit-element';
-import 'fa-icons';
 
 export class Footer extends LitElement {
   static get properties() {
@@ -36,12 +36,16 @@ export class Footer extends LitElement {
       .icon-3d {
         margin: 16px;
         cursor: pointer;
+        width: 3em;
       }
     `;
   }
 
   openMail() {
-    window.open('https://mail.google.com/mail/u/0/?view=cm&fs=1&to=bharathmuppa@gmail.com&tf=1', '_blank');
+    window.open(
+      'https://mail.google.com/mail/u/0/?view=cm&fs=1&to=bharathmuppa@gmail.com&tf=1',
+      '_blank'
+    );
   }
 
   openLinkedin() {
@@ -55,38 +59,44 @@ export class Footer extends LitElement {
   openArticles() {
     window.open('https://dev.to/bharathmuppa', '_blank');
   }
+  
+  openGithub() {
+    window.open('https://github.com/bharathmuppa', '_blank');
+  }
 
   render() {
     return html`
       <div class="footer flex-center">
-        <fa-icon
-          class="fab fa-google icon-3d"
-          src="../src/assets/brands.svg"
-          style="fill: #2980B9;height: 3em;width: 3em;"
-          path-prefix="../sr/assets"
+        <img
+          src="../src/assets/images/social/google.svg"
+          class="icon-3d"
+          alt="Mail"
           @click="${this.openMail}"
-        ></fa-icon>
-        <fa-icon
-          class="fab fa-linkedin icon-3d"
-          src="../src/assets/brands.svg"
-          path-prefix="../sr/assets"
-          style="fill: #2980B9;height: 3em;width: 3em; "
+        />
+        <img
+          src="../src/assets/images/social/linkedin-in.svg"
+          class="icon-3d"
+          alt="Linkedin"
           @click="${this.openLinkedin}"
-        ></fa-icon>
-        <fa-icon
-          class="fab fa-twitter icon-3d"
-          src="../src/assets/brands.svg"
-          path-prefix="../sr/assets"
-          style="fill: #2980B9;height: 3em;width: 3em;"
+        />
+        <img
+          src="../src/assets/images/social/twitter.svg"
+          class="icon-3d"
+          alt="Twitter, views are my own"
           @click="${this.openTwitter}"
-        ></fa-icon>
-        <fa-icon
-          class="fab fa-dev icon-3d"
-          src="../src/assets/brands.svg"
-          path-prefix="../sr/assets"
-          style="fill: #2980B9;height: 3em;width: 3em;"
+        />
+        <img
+          src="../src/assets/images/social/dev.svg"
+          class="icon-3d"
+          alt="Hobbies"
           @click="${this.openArticles}"
-        ></fa-icon>
+        />
+        <img
+          src="../src/assets/images/social/github.svg"
+          class="icon-3d"
+          alt="repos"
+          @click="${this.openGithub}"
+        />
       </div>
     `;
   }
