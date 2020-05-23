@@ -63,23 +63,27 @@ export class Footer extends LitElement {
           class="fab fa-google icon-3d"
           src="../src/assets/brands.svg"
           style="fill: #2980B9;height: 3em;width: 3em;"
+          path-prefix="../sr/assets"
           @click="${this.openMail}"
         ></fa-icon>
         <fa-icon
           class="fab fa-linkedin icon-3d"
           src="../src/assets/brands.svg"
+          path-prefix="../sr/assets"
           style="fill: #2980B9;height: 3em;width: 3em; "
           @click="${this.openLinkedin}"
         ></fa-icon>
         <fa-icon
           class="fab fa-twitter icon-3d"
           src="../src/assets/brands.svg"
+          path-prefix="../sr/assets"
           style="fill: #2980B9;height: 3em;width: 3em;"
           @click="${this.openTwitter}"
         ></fa-icon>
         <fa-icon
           class="fab fa-dev icon-3d"
           src="../src/assets/brands.svg"
+          path-prefix="../sr/assets"
           style="fill: #2980B9;height: 3em;width: 3em;"
           @click="${this.openArticles}"
         ></fa-icon>
