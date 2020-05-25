@@ -150,8 +150,9 @@ export class Musings extends LitElement {
         .fav-books__img,
         .fav-persons__img,
         .fav-series__img {
-          width: 60px;
-          height: 60px;
+          padding: 4px;
+          width: 90px;
+          height: 90px;
           margin: 1rem 0.5rem;
         }
         .fav-books,
