@@ -77,6 +77,26 @@ export class Articles extends LitElement {
         font-size: 38px;
         transform: skewY(-2deg);
       }
+      @media only screen and (max-width: 400px) {
+        .articles-conatiner {
+          flex-flow: column wrap;
+          padding: 1rem;
+        }
+        .card{
+          margin: 0 0 2rem 0;
+        }
+      }
+      @media only screen and (min-width: 400px)  and (max-width: 800px) {
+        .articles-conatiner {
+          flex-flow: column wrap;
+          padding: 1rem;
+        }
+        .card{
+          width: 200px;
+          height: 250px;
+          margin: 0 0 1rem 1rem;
+        }
+      }
     `;
   }
 

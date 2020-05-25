@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import { LitElement, html, css } from 'lit-element';
 
 export class Musings extends LitElement {
@@ -143,6 +144,35 @@ export class Musings extends LitElement {
           width: 300px;
           height: 300px;
           padding: 0.5rem;
+        }
+      }
+      @media only screen and (max-width: 400px) {
+        .fav-books__img,
+        .fav-persons__img,
+        .fav-series__img {
+          width: 60px;
+          height: 60px;
+          margin: 1rem 0.5rem;
+        }
+        .fav-books,
+        .fav-persons,
+        .fav-series {
+          margin: 0.5rem 0;
+        }
+      }
+      @media only screen and (min-width: 400px) and (max-width: 800px) {
+        .fav-books,
+        .fav-persons,
+        .fav-series {
+          margin: 1rem 0;
+        }
+
+        .fav-books__img,
+        .fav-persons__img,
+        .fav-series__img {
+          width: 100px;
+          height: 100px;
+          margin: 1rem 1rem;
         }
       }
     `;

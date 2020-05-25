@@ -68,6 +68,17 @@ export class Hill extends LitElement {
             background-size: contain;
           }
       }
+      @media only screen and (max-width: 400px) {
+        .hill{
+          flex-flow: column;
+          width: 100%;
+          min-height: 50vh;      
+        }
+        .hill h1 {
+          font-size: 18px;
+          width: 100%;
+        }
+      }
     `;
   }
 

@@ -6,10 +6,8 @@ const color3 = css`#4f40ff`;
 const color4 = css`#25ddf5`;
 
 export class Stripes extends LitElement {
-  
   constructor() {
     super();
-   
   }
 
   static get styles() {
@@ -22,14 +20,13 @@ export class Stripes extends LitElement {
         transform: skewY(-4deg);
         -webkit-transform-origin: 0;
         transform-origin: 0;
-        background: linear-gradient(150deg, #53f 15%, #05d5ff 70%,  #25ddf5 94%);
+        background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #25ddf5 94%);
         top: -5px;
         position: relative;
       }
 
       div#slanted-bg span {
         position: absolute;
-      
       }
 
       span:nth-child(1) {
@@ -56,33 +53,54 @@ export class Stripes extends LitElement {
         border-radius: 0;
       }
       span:nth-child(4) {
-        
         height: 69px;
         transform: skew(-4deg);
         width: 200px;
-        border-radius: 12px;  
-        background:  linear-gradient(150deg, #53f 15%, #05d5ff 70%,  #25ddf5 94%);
+        border-radius: 12px;
+        background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #25ddf5 94%);
         bottom: -48px;
         right: 0;
         border: 10px solid white;
       }
       span:nth-child(5) {
         height: 180px;
-        border-radius: 12px;  
+        border-radius: 12px;
         transform: skew(4deg);
         bottom: -48px;
         right: 0;
       }
-      .bgImg{
+      .bgImg {
         border: 10px solid white;
         width: 130px;
         background-position: right;
-        background-image: url("./src/assets/mine.png");
+        background-image: url('./src/assets/mine.png');
         background-repeat: no-repeat;
+      }
+      @media only screen and (max-width: 400px) {
+        span:nth-child(4) {
+          top: 30vh;
+          transform: skew(-35deg);
+          right: -5vw;
+        }
+        .bgImg {
+          top: 17vh;
+        }
+      }
+      @media only screen and (min-width: 400px) and (max-width: 800px) {
+        span:nth-child(4) {
+          transform: skew(-35deg);
+          top: 15vh;
+          right: -5vw;
+        }
+        .bgImg {
+          bottom: auto;
+          z-index: 99;
+          top: 4vh;
+        }
       }
     `;
   }
-  
+
   render() {
     return html`
       <div id="slanted-bg" aria-hidden="true">
@@ -94,6 +112,4 @@ export class Stripes extends LitElement {
       </div>
     `;
   }
-
- 
 }

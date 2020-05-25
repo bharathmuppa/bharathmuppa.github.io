@@ -1,6 +1,7 @@
+/* eslint-disable class-methods-use-this */
 import { LitElement, html, css } from 'lit-element';
-import   '../shared/stripes/stripes.js';
-import  '../shared/menu/menu.js';
+import '../shared/stripes/stripes.js';
+import '../shared/menu/menu.js';
 
 export class Header extends LitElement {
   static get properties() {
@@ -58,12 +59,12 @@ export class Header extends LitElement {
         padding: 8px 16px;
         background: #4553ff;
       }
-      .life-style h3 .sub-title{
+      .life-style h3 .sub-title {
         font-size: 18px;
         line-height: 28px;
         color: #fff;
       }
-      .life-style h3 .description{
+      .life-style h3 .description {
         font-size: 16px;
         font-style: italic;
         line-height: 28px;
@@ -76,6 +77,14 @@ export class Header extends LitElement {
       }
       .sticky + .content {
         padding-top: 102px;
+      }
+      @media only screen and (max-width: 600px) {
+        .life-style{
+          width: 90vw;
+          left:5vw;
+          right:5vw;
+          box-sizing: border-box;
+        }
       }
     `;
   }

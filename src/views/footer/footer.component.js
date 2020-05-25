@@ -38,6 +38,7 @@ export class Footer extends LitElement {
         cursor: pointer;
         width: 3em;
       }
+     
     `;
   }
 

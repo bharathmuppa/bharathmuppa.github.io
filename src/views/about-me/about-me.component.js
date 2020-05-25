@@ -1,10 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 
 export class AboutMe extends LitElement {
-  constructor() {
-    super();
-  }
-
   static get styles() {
     return css`
       #description {
@@ -24,6 +20,14 @@ export class AboutMe extends LitElement {
       }
       #description span b {
         font-style: normal;
+      }
+
+      @media only screen and (max-width:600px) {
+        #description {
+          padding: 0;
+          font-size: 18px;
+          margin-top: 3rem;
+        }
       }
     `;
   }

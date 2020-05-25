@@ -15,11 +15,11 @@ export class PetProjects extends LitElement {
       },
       {
         title: 'Smart Home Template',
-        description: 'A simple jquery based html temaplte for Smart home themes',
+        description:
+          'A simple jquery based html temaplte for Smart home themes',
         social_image:
           'https://github.com/bharathmuppa/HomeAutomation/blob/master/social-image.jpg?raw=true',
-        link:
-          'https://bharathmuppa.github.io/HomeAutomation/',
+        link: 'https://bharathmuppa.github.io/HomeAutomation/',
       },
       {
         title: 'Web Hotels',
@@ -27,8 +27,7 @@ export class PetProjects extends LitElement {
           'Working on project to democratize digitalization process of small and medium business',
         social_image:
           'https://kaicolabs.com/wp-content/uploads/2019/10/coming-soon-neon-sign-coming-soon-badge-in-vector-21133321.jpg',
-        link:
-          '',
+        link: '',
       },
     ];
   }
@@ -43,15 +42,13 @@ export class PetProjects extends LitElement {
 
   static get styles() {
     return css`
-
-    
       .pet-project__conatiner {
         display: flex;
         flex-flow: row wrap;
         padding: 1rem;
       }
       .card {
-        box-shadow:1px 1px 6px rgba(5, 213, 255,0.3);
+        box-shadow: 1px 1px 6px rgba(5, 213, 255, 0.3);
         border-radius: 12px;
         width: 300px;
         height: 250px;
@@ -85,34 +82,53 @@ export class PetProjects extends LitElement {
         font-weight: bolder;
         color: rgb(255, 255, 255);
       }
+      @media only screen and (max-width: 400px) {
+        .pet-project__conatiner {
+          display: flex;
+          flex-flow: column wrap;
+          padding: 1rem;
+        }
+        .card{
+          margin: 0 0 2rem 0;
+        }
+      }
+      @media only screen and (min-width: 400px)  and (max-width: 800px) {
+        .pet-project__conatiner {
+          display: flex;
+          flex-flow: row wrap;
+          padding: 1rem;
+        }
+        .card{
+          margin: 0 0 1rem 1rem;
+          width: 200px;
+          height: 250px;
+        }
+      }
     `;
   }
 
-  goToPage(link){
-      if(!link){
-          return;
-      }
-      window.open(link,'_blank')
+  goToPage(link) {
+    if (!link) {
+      return;
+    }
+    window.open(link, '_blank');
   }
 
   render() {
     return html`
-   
-        <div class="pet-project__conatiner">
-          ${this.articles.map(
-            item => html`
-              <div class="card" @click="${() => this.goToPage(item.link)}">
-                <img .src=${item.social_image} class="card--img" />
-                <div class="card--content">
-                  <span class="card--title">${item.title}</span>
-                  <span class="card--description">${item.description}</span>
-                </div>
+      <div class="pet-project__conatiner">
+        ${this.articles.map(
+          item => html`
+            <div class="card" @click="${() => this.goToPage(item.link)}">
+              <img .src=${item.social_image} class="card--img" />
+              <div class="card--content">
+                <span class="card--title">${item.title}</span>
+                <span class="card--description">${item.description}</span>
               </div>
-            `
-          )}
-        </div>
-     
-    
+            </div>
+          `
+        )}
+      </div>
     `;
   }
 
