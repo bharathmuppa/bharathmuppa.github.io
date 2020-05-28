@@ -20,6 +20,7 @@ export class Articles extends LitElement {
       .articles {
         width: 100%;
         min-height: 80vh;
+        box-sizing: border-box;
         padding: 1rem;
         transform: skewY(2deg);
         transform-origin: 0px center;
@@ -38,6 +39,7 @@ export class Articles extends LitElement {
         flex-flow: row wrap;
         padding: 1rem;
         margin-top:2rem;
+        transform: skewY(-2deg);
       }
       .projects-container{
         transform: skewY(-2deg);
@@ -48,14 +50,13 @@ export class Articles extends LitElement {
         height: 250px;
         box-shadow: 1px 1px 6px #fff;
         border-radius: 6px;
-        margin-left: 2rem;
+        margin: 1rem 0 0 2rem;
         background: #fff;
-        transform: skewY(-2deg);
       }
       .card--img {
         width: 100%;
         height: 160px;
-        object-fit: scale-down;
+        object-fit: unset;
       }
       .card--content {
         padding: 2px 16px 16px 16px;
@@ -85,16 +86,22 @@ export class Articles extends LitElement {
         .card{
           margin: 0 0 2rem 0;
         }
+        .card--description {
+         
+        }
       }
       @media only screen and (min-width: 400px)  and (max-width: 800px) {
         .articles-conatiner {
-          flex-flow: column wrap;
+          flex-flow: row wrap;
           padding: 1rem;
         }
         .card{
-          width: 200px;
-          height: 250px;
-          margin: 0 0 1rem 1rem;
+          margin: 1rem auto;
+          width: 400px;
+          height: 300px;
+        }
+        .card--description {
+          
         }
       }
     `;

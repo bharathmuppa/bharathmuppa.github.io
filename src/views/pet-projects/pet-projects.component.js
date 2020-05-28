@@ -53,12 +53,12 @@ export class PetProjects extends LitElement {
         width: 300px;
         height: 250px;
         background: #fff;
-        margin-left: 2rem;
+        margin: 0 0 1rem 2rem;
         cursor: pointer;
       }
       .card--img {
         width: 100%;
-        object-fit: cover;
+        object-fit: unset;
         height: 160px;
       }
       .card--content {
@@ -88,19 +88,25 @@ export class PetProjects extends LitElement {
           flex-flow: column wrap;
           padding: 1rem;
         }
-        .card{
+        .card--img {
+          object-fit: cover;
+        }
+        .card {
           margin: 0 0 2rem 0;
         }
+        .card--description {
+          display: block;
+        }
       }
-      @media only screen and (min-width: 400px)  and (max-width: 800px) {
+      @media only screen and (min-width: 400px) and (max-width: 800px) {
         .pet-project__conatiner {
           display: flex;
           flex-flow: row wrap;
           padding: 1rem;
         }
-        .card{
-          margin: 0 0 1rem 1rem;
-          width: 200px;
+        .card {
+          margin: 1rem auto;
+          width: 400px;
           height: 250px;
         }
       }
