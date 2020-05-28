@@ -1,0 +1,47 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ development ]
+jobs:
+  job1:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: checkout master branch # checkout master branch
+        uses: actions/checkout@v2
+        with:
+          ref: master
+          persist-credentials: false
+      - name: remove all files # remove files.
+        run: |
+          rm -rf *
+      - name: checkout dev branch #checkout dev branch into temp folder.
+        uses: actions/checkout@v2
+        with:
+          path: temp
+          ref: development
+          persist-credentials: false
+      - name: run npm build # go to temp folder and run npm build to create files.
+        run: |
+          cd temp
+          npm i
+          npm run build
+      - name: move files # move the dist files into root dir and remove others.
+        run: |
+          mv temp/dist/* ./
+          rm -rf temp
+      - name: Commit files for change # commit changes
+        run: |
+          git config --local user.email "bharathmuppa@github.com"
+          git config --local user.name "bharath muppa"
+          git add .
+          git commit -m "Updated to new version"
+      - name: Push changes #push files into master branch
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
