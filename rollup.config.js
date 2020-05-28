@@ -34,6 +34,7 @@ export default merge(baseConfig, {
     copy({
       targets: [
         { src: 'styles.css', dest: 'dist' },
+        { src: 'README.md', dest: 'dist' },
         { src: 'favicon.ico', dest: 'dist' },
         { src: ['src/assets/**/*'], dest: 'dist/src' },
       ],

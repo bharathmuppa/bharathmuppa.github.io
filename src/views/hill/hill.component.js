@@ -68,7 +68,7 @@ export class Hill extends LitElement {
             background-size: contain;
           }
       }
-      @media only screen and (max-width: 400px) {
+      @media only screen and (max-width: 500px) {
         .hill{
           flex-flow: column;
           width: 100%;
