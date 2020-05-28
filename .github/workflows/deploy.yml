@@ -19,6 +19,7 @@ jobs:
       - name: remove all files # remove files.
         run: |
           rm -rf *
+          echo removed all files in master
       - name: checkout dev branch #checkout dev branch into temp folder.
         uses: actions/checkout@v2
         with:
@@ -30,18 +31,22 @@ jobs:
           cd temp
           npm i
           npm run build
+          echo build success
       - name: move files # move the dist files into root dir and remove others.
         run: |
           mv temp/dist/* ./
           rm -rf temp
+          echo removed folder creaed for development branch
       - name: Commit files for change # commit changes
         run: |
           git config --local user.email "bharathmuppa@github.com"
           git config --local user.name "bharath muppa"
           git add .
           git commit -m "Updated to new version"
+          echo files commited to master branch
       - name: Push changes #push files into master branch
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
+          echo changes pushed to master branch
