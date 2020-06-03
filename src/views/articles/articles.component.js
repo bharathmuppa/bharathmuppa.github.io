@@ -52,6 +52,7 @@ export class Articles extends LitElement {
         border-radius: 6px;
         margin: 1rem 0 0 2rem;
         background: #fff;
+        cursor:pointer;
       }
       .card--img {
         width: 100%;
