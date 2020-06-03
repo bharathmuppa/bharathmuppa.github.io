@@ -38,10 +38,10 @@ export class Articles extends LitElement {
         display: flex;
         flex-flow: row wrap;
         padding: 1rem;
-        margin-top:2rem;
+        margin-top: 2rem;
         transform: skewY(-2deg);
       }
-      .projects-container{
+      .projects-container {
         transform: skewY(-2deg);
         display: block;
       }
@@ -83,25 +83,23 @@ export class Articles extends LitElement {
           flex-flow: column wrap;
           padding: 1rem;
         }
-        .card{
+        .card {
           margin: 0 0 2rem 0;
         }
         .card--description {
-         
         }
       }
-      @media only screen and (min-width: 400px)  and (max-width: 800px) {
+      @media only screen and (min-width: 400px) and (max-width: 800px) {
         .articles-conatiner {
           flex-flow: row wrap;
           padding: 1rem;
         }
-        .card{
+        .card {
           margin: 1rem auto;
           width: 400px;
           height: 300px;
         }
         .card--description {
-          
         }
       }
     `;
@@ -110,12 +108,12 @@ export class Articles extends LitElement {
   render() {
     return html`
       <div class="articles">
-        <h1>Pet Projects & Articles </h1>
+        <h1>Pet Projects & Articles</h1>
         <ec-pet-projects class="projects-container"></ec-pet-projects>
         <div class="articles-conatiner">
           ${this.articles.map(
             item => html`
-              <div class="card">
+              <div class="card"   @click="${() => this.goToArticle(item.url)}">
                 <img .src=${item.social_image} class="card--img" />
                 <div class="card--content">
                   <span class="card--title">${item.title}</span>
@@ -125,9 +123,13 @@ export class Articles extends LitElement {
             `
           )}
         </div>
-       
       </div>
     `;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  goToArticle(url) {
+    window.open(url, '_blank');
   }
 
   firstUpdated() {
