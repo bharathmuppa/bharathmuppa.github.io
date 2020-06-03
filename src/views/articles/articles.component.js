@@ -137,7 +137,6 @@ export class Articles extends LitElement {
       .then(r => r.json())
       .then(r => {
         this.articles = r;
-        console.log(this.articles);
       });
   }
 }
