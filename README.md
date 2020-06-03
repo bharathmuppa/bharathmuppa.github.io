@@ -1,4 +1,4 @@
-## Lit Element based profile
+## Lit Element based profile page.
 
 Please feel free to use it. Just hit a star if you like the template.
 
