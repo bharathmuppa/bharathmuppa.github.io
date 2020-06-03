@@ -9,7 +9,7 @@ export class PetProjects extends LitElement {
         description:
           'Based on pytube, This youtube synchronizer helps you in synchronizing the playlist to your local computer drive.',
         social_image:
-          'https://pbs.twimg.com/card_img/1264018549460393984/874CDM65?format=jpg&name=small',
+          'https://github.com/entangledcognition/youtube-playlist-syncronizer/blob/master/share.png',
         link:
           'https://entangledcognition.github.io/youtube-playlist-syncronizer/',
       },
