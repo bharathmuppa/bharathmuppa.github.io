@@ -38,7 +38,7 @@ export class Articles extends LitElement {
         display: flex;
         flex-flow: row wrap;
         padding: 1rem;
-        margin-top: 2rem;
+        margin: 2rem 0;
         transform: skewY(-2deg);
       }
       .projects-container {
