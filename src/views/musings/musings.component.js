@@ -141,8 +141,8 @@ export class Musings extends LitElement {
           border-radius: 50%;
           box-shadow: 1px 1px 6px black;
           margin: 0 1rem;
-          width: 300px;
-          height: 300px;
+          width: 250px;
+          height: 250px;
           padding: 0.5rem;
         }
       }
