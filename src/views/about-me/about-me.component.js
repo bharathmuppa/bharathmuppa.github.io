@@ -22,7 +22,7 @@ export class AboutMe extends LitElement {
         font-style: normal;
       }
 
-      @media only screen and (max-width:600px) {
+      @media only screen and (max-width: 600px) {
         #description {
           padding: 0;
           font-size: 18px;
@@ -37,7 +37,9 @@ export class AboutMe extends LitElement {
       <article id="description">
           <span>
           I would like to introduce myself as <b>Full stack web developer</b>, with more
-        than <b>6</b> years of experience in software development. I have immense
+        than <b>${
+          new Date().getFullYear() - new Date(2013, 12, 23).getFullYear()
+        }</b> years of experience in software development. I have immense
         pleasure in working on complex tasks and designs for web and mobile
         project. I love working with people who are erudites, love to share
         knowledge and provides positive criticism.
