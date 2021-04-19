@@ -72,7 +72,7 @@ export class Stripes extends LitElement {
       .bgImg {
         border: 10px solid white;
         width: 130px;
-        background-position: right;
+        background-position: left;
         background-image: url('./src/assets/mine.png');
         background-repeat: no-repeat;
       }
@@ -83,7 +83,9 @@ export class Stripes extends LitElement {
           right: -5vw;
         }
         .bgImg {
-          top: 17vh;
+          height: 133px !important;
+          right: px !important;
+          top: 13vh;
         }
       }
       @media only screen and (min-width: 400px) and (max-width: 800px) {
