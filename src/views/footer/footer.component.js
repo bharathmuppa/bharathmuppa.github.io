@@ -64,6 +64,16 @@ export class Footer extends LitElement {
   openGithub() {
     window.open('https://github.com/bharathmuppa', '_blank');
   }
+  downloadResume(){
+    var link = document.createElement("a");
+    // If you don't know the name or want to use
+    // the webserver default set name = ''
+    link.setAttribute('download', "BharathMuppa_CV.pdf");
+    link.href = "./src/assets/BharathMuppa_CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
 
   render() {
     return html`
@@ -98,6 +108,12 @@ export class Footer extends LitElement {
           alt="repos"
           @click="${this.openGithub}"
         />
+        <img
+        src="../src/assets/images/social/resume.svg"
+        class="icon-3d"
+        alt="repos"
+        @click="${this.downloadResume}"
+      />
       </div>
     `;
   }

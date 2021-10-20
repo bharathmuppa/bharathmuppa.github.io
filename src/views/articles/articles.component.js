@@ -66,6 +66,11 @@ export class Articles extends LitElement {
         flex-flow: column;
       }
       .card--title {
+        display: -webkit-box;
+       -webkit-line-clamp: 2;
+       -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-size: 16px;
         font-weight: bolder;
       }
@@ -113,7 +118,7 @@ export class Articles extends LitElement {
         <ec-pet-projects class="projects-container"></ec-pet-projects>
         <div class="articles-conatiner">
           ${this.articles.map(
-            item => html`
+      item => html`
               <div class="card"   @click="${() => this.goToArticle(item.url)}">
                 <img .src=${item.social_image} class="card--img" />
                 <div class="card--content">
@@ -122,7 +127,7 @@ export class Articles extends LitElement {
                 </div>
               </div>
             `
-          )}
+    )}
         </div>
       </div>
     `;
