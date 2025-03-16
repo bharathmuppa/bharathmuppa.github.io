@@ -43,15 +43,16 @@ jobs:
 
       - name: Generate PDF Resume from JSON
         run: |
-          npx degit rbardini/resumed/examples/with-pdf-export resumed-pdf
-          cd resumed-pdf
-          npm install
-          cp ../resume.json ./resume.json
-          npm run init
-          npm run start
-          mkdir -p ../src/assets
-          cp dist/resume.pdf ../src/assets/BharathMuppa_Resume.pdf
-          echo "Generated resume PDF"
+            npm install -g degit
+            npx degit rbardini/resumed/examples/with-pdf-export resumed-pdf
+            cp resume.json resumed-pdf/resume.json
+            cd resumed-pdf
+            npm install
+            npm run build
+            mkdir -p ../src/assets
+            cp dist/resume.pdf ../src/assets/BharathMuppa_Resume.pdf
+            echo "Generated resume PDF"
+        
 
       - name: Commit generated files
         run: |
