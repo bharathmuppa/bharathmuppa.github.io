@@ -44,7 +44,9 @@ jobs:
       - name: Generate PDF Resume from JSON
         run: |
             npm install -g degit
+            ls -a
             npx degit rbardini/resumed/examples/with-pdf-export resumed-pdf
+            ls -a
             cp resume.json resumed-pdf/resume.json
             cd resumed-pdf
             npm install
