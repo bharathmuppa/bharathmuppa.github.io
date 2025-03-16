@@ -37,11 +37,11 @@ jobs:
               cd resumed-pdf
               ls -a
               npm install
-              npm run init
+              npx resumed render resume.json
               npm start
               cp dist/resume.pdf ../temp/src/assets/BharathMuppa_Resume.pdf
               echo "Generated resume PDF"
-              
+
       - name: Install dependencies and build
         run: |
           cd temp
@@ -55,8 +55,6 @@ jobs:
           mv temp/resume.json ./resume.json
           rm -rf temp
           echo "Removed temporary development folder"
-
-        
 
       - name: Commit generated files
         run: |
