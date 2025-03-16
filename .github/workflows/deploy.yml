@@ -31,8 +31,8 @@ jobs:
       - name: Generate PDF Resume from JSON
         run: |
               cd temp
-              npm install jsonresume-theme-straightforward
-              resume export resume.pdf --format pdf --theme jsonresume-theme-straightforward
+              npm install jsonresume-theme-straightforward resume-cli
+              npx resume export resume.pdf --format pdf --theme jsonresume-theme-straightforward
               ls -a
               cp resume.pdf ./src/assets/BharathMuppa_Resume.pdf
               cd..
