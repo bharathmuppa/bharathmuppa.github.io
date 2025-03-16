@@ -28,6 +28,20 @@ jobs:
           path: temp
           persist-credentials: false
 
+      - name: Generate PDF Resume from JSON
+        run: |
+              npm install -g degit
+              ls -a
+              npx degit rbardini/resumed/examples/with-pdf-export resumed-pdf
+              cp temp/resume.json resumed-pdf/resume.json
+              cd resumed-pdf
+              ls -a
+              npm install
+              npm run init
+              npm start
+              cp dist/resume.pdf ../temp/src/assets/BharathMuppa_Resume.pdf
+              echo "Generated resume PDF"
+              
       - name: Install dependencies and build
         run: |
           cd temp
@@ -42,19 +56,6 @@ jobs:
           rm -rf temp
           echo "Removed temporary development folder"
 
-      - name: Generate PDF Resume from JSON
-        run: |
-            npm install -g degit
-            ls -a
-            npx degit rbardini/resumed/examples/with-pdf-export resumed-pdf
-            ls -a
-            cp resume.json resumed-pdf/resume.json
-            cd resumed-pdf
-            npm install
-            npm run build
-            mkdir -p ../src/assets
-            cp dist/resume.pdf ../src/assets/BharathMuppa_Resume.pdf
-            echo "Generated resume PDF"
         
 
       - name: Commit generated files
