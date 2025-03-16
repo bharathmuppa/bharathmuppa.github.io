@@ -31,14 +31,15 @@ jobs:
       - name: Generate PDF Resume from JSON
         run: |
               npm install -g degit
+              npm install resumed jsonresume-theme-even
               ls -a
               npx degit rbardini/resumed/examples/with-pdf-export resumed-pdf
               cp temp/resume.json resumed-pdf/resume.json
               cd resumed-pdf
-              ls -a
               npm install
               npx resumed render resume.json
-              npm start
+              npm start -- --no-sandbox
+              ls -a
               cp dist/resume.pdf ../temp/src/assets/BharathMuppa_Resume.pdf
               echo "Generated resume PDF"
 
