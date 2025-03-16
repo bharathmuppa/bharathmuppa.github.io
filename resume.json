@@ -1,0 +1,111 @@
+{
+    "basics": {
+      "name": "Bharath Muppa",
+      "label": "Senior Software Consultant",
+      "email": "bharathmuppa@gmail.com",
+      "url": "https://bharathmuppa.dev",
+      "location": {
+        "city": "Eindhoven",
+        "region": "North Brabant",
+        "countryCode": "NL"
+      },
+      "profiles": [
+        {
+          "network": "LinkedIn",
+          "username": "bharathmuppa",
+          "url": "https://www.linkedin.com/in/bharathmuppa"
+        }
+      ],
+      "summary": "Software Consultant at ASML with expertise in full-stack web applications using JavaScript (Angular), Java (Spring Boot), Azure, Kubernetes, Terraform, and Okta. Passionate about reducing Time to Market and ensuring secure, scalable systems."
+    },
+    "work": [
+      {
+        "name": "ASML",
+        "position": "Software Consultant",
+        "location": "Eindhoven Area",
+        "startDate": "2021-05-01",
+        "endDate": "Present",
+        "highlights": [
+          "Designing scalable web applications",
+          "Using JavaScript (Angular), Java (Spring Boot), Azure, Kubernetes, Terraform, Okta"
+        ]
+      },
+      {
+        "name": "Philips",
+        "position": "Full-stack Web Developer",
+        "location": "Eindhoven Area, Netherlands",
+        "startDate": "2019-06-01",
+        "endDate": "2021-03-01",
+        "highlights": [
+          "Developed Medical image processing libraries with Typescript, Jest, Webpack",
+          "Created reusable UI components using Angular, Jasmine, Protractor",
+          "Implemented CI/CD pipelines, Monorepos (NX), Docker deployments"
+        ]
+      },
+      {
+        "name": "Eurail.com",
+        "position": "Web Developer",
+        "location": "Utrecht Area, Netherlands",
+        "startDate": "2019-02-01",
+        "endDate": "2019-05-01",
+        "highlights": [
+          "Worked as React developer on Reservation systems"
+        ]
+      },
+      {
+        "name": "Tata Consultancy Services",
+        "position": "Full Stack Developer",
+        "location": "Hyderabad",
+        "startDate": "2013-12-01",
+        "endDate": "2019-02-01",
+        "highlights": [
+          "Handled projects for AXIS Bank, XL, DBS, ASML",
+          "Focused on JavaScript, Angular, NodeJS, Typescript, Jasmine, Protractor, Webpack, HTML5, CSS3",
+          "Responsible for code quality and deployments"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "SRKR Engineering College",
+        "area": "Computer Science Engineering",
+        "studyType": "Bachelor's Degree",
+        "startDate": "2009-01-01",
+        "endDate": "2013-01-01"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Software Development",
+        "keywords": [
+          "JavaScript",
+          "Angular",
+          "Java",
+          "Spring Boot",
+          "Azure",
+          "Kubernetes",
+          "Terraform",
+          "Okta",
+          "Typescript",
+          "NodeJS",
+          "HTML5",
+          "CSS3"
+        ]
+      }
+    ],
+    "languages": [
+      { "language": "English", "fluency": "Professional Working" },
+      { "language": "Telugu", "fluency": "Native or Bilingual" }
+    ],
+    "certificates": [
+      { "name": "MongoDB Atlas (OF400)" },
+      { "name": "Production System Design (OF300)" },
+      { "name": "IBM Quantum Challenge" }
+    ],
+    "awards": [
+      { "title": "Principle Cup Winners" },
+      { "title": "Kudos" },
+      { "title": "CLP Faculty Award" }
+    ]
+  }
+  

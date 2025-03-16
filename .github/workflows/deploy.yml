@@ -1,50 +1,66 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   push:
-    branches: [ development ]
+    branches:
+      - development
+
 jobs:
-  job1:
-    runs-on: [ubuntu-latest]
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: checkout master branch # checkout master branch
-        uses: actions/checkout@v2
+      - name: Checkout master branch
+        uses: actions/checkout@v4
         with:
           ref: master
           persist-credentials: false
-      - name: remove all files # remove files.
+
+      - name: Remove all files
         run: |
           rm -rf *
-          echo removed all files in master
-      - name: checkout dev branch #checkout dev branch into temp folder.
-        uses: actions/checkout@v2
+          echo "Removed all files in master"
+
+      - name: Checkout development branch into temp
+        uses: actions/checkout@v4
         with:
-          path: temp
           ref: development
+          path: temp
           persist-credentials: false
-      - name: run npm build # go to temp folder and run npm build to create files.
+
+      - name: Install dependencies and build
         run: |
           cd temp
-          npm i
+          npm install
           npm run build
-          echo build success
-      - name: move files # move the dist files into root dir and remove others.
+          echo "Build success"
+
+      - name: Move built files
         run: |
           mv temp/dist/* ./
           rm -rf temp
-          echo removed folder creaed for development branch
-      - name: Commit files for change # commit changes
+          echo "Removed temporary development folder"
+
+      - name: Generate PDF Resume from JSON
         run: |
-          git config --local user.email "bharathmuppa@github.com"
-          git config --local user.name "bharath muppa"
+          npm install
+          npx degit rbardini/resumed/examples/with-pdf-export resumed-pdf
+          cd resumed-pdf
+          npm install
+          cp ../resume.json ./resume.json
+          npm run build
+          mkdir -p ../src/assets
+          cp dist/resume.pdf ../src/assets/BharathMuppa_Resume.pdf
+          echo "Generated resume PDF"
+
+      - name: Commit generated files
+        run: |
+          git config --global user.email "bharathmuppa@gmail.com"
+          git config --global user.name "bharathmuppa"
           git add .
-          git commit -m "Updated to new version"
-          echo files commited to master branch
-      - name: Push changes #push files into master branch
+          git commit -m "Automated build and resume PDF generation" || echo "No changes to commit"
+
+      - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
