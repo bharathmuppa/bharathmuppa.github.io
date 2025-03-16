@@ -34,7 +34,7 @@ jobs:
               npm install jsonresume-theme-straightforward resume-cli
               npx resume export resume.pdf --format pdf --theme jsonresume-theme-straightforward
               ls -a
-              cp resume.pdf ./src/assets/BharathMuppa_Resume.pdf
+              cp dist/resume.pdf ./src/assets/BharathMuppa_Resume.pdf
               cd..
               echo "Generated resume PDF"
 
