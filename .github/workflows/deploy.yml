@@ -38,6 +38,7 @@ jobs:
       - name: Move built files
         run: |
           mv temp/dist/* ./
+          mv temp/resume.json ./resume.json
           rm -rf temp
           echo "Removed temporary development folder"
 
