@@ -37,7 +37,7 @@ jobs:
               cp temp/resume.json resumed-pdf/resume.json
               cd resumed-pdf
               npm install
-              npx resumed render resume.json
+              npx resumed render resume.json --theme jsonresume-theme-even
               npm start -- --no-sandbox
               ls -a
               cp dist/resume.pdf ../temp/src/assets/BharathMuppa_Resume.pdf
