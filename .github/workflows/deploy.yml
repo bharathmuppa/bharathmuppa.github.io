@@ -34,7 +34,7 @@ jobs:
               npm install jsonresume-theme-straightforward resume-cli
               ls -a
               npx resume validate
-              npx resume export resume.pdf --resume ./resume.pdf --format pdf --theme jsonresume-theme-straightforward
+              npx resume export resume.pdf --resume ./resume.json --format pdf --theme jsonresume-theme-straightforward
               ls -a
               cd dist
               cp  /home/runner/work/bharathmuppa.github.io/bharathmuppa.github.io/temp/resume.pdf ./src/assets/BharathMuppa_Resume.pdf
